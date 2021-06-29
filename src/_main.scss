@@ -1,0 +1,108 @@
+.main {
+  background-color: $red;
+  width: 56%;
+  margin-left: 44%;
+  display: flex;
+  justify-content: center;
+  flex-flow: column wrap;
+  @include tablet {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+.movie {
+  width: 100%;
+  height: 95vh;
+  background: linear-gradient($darkRed, $red);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  @include tablet {
+    height: auto;
+  }
+
+  &__header {
+    color: $white;
+    font-family: Univers, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 80%;
+    margin-top: 30px;
+    margin-bottom: 25px;
+    @include tablet {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+
+    @include mobile {
+      font-size: 1rem;
+    }
+  }
+  &__director {
+    font-size: 1rem;
+
+    text-align: right;
+  }
+  &__video {
+    position: relative;
+    overflow: hidden;
+    width: 80%;
+    padding-top: 45%;
+    background-size: cover;
+
+    box-shadow: 0 80px 80px -80px #000, 0 0 12px rgba(0, 0, 0, 0.06),
+      inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
+  &__statistics {
+    width: 80%;
+    height: 45px;
+    color: $white;
+    display: flex;
+
+    font-size: 1rem;
+    z-index: 1;
+    margin-top: 10px;
+
+    &--likes {
+      margin-right: 25px;
+      margin-left: 10px;
+    }
+    &--dislikes {
+      margin-left: 10px;
+    }
+  }
+}
+.movieVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+
+  filter: grayscale(100%);
+
+  box-shadow: 0 80px 80px -80px #000, 0 0 12px rgba(0, 0, 0, 0.06),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+  justify-self: flex-start;
+}
+
+.play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 35px;
+}

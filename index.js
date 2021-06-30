@@ -83,14 +83,16 @@ videoSection(videoData);
 function videoSection(data) {
   var main = document.getElementById("main");
 
-  for (let i = 0; i < data.length; i++) {
-    var movie = `<article class="movie">
+  for (var i = 0; i < data.length; i++) {
+    var movie = `<article class="movie" >
     
         <header class="movie__header">
-        <h3 class="movie__title"> ${data[i].title}</h3>
-        <p class="movie__director">${data[i].director}</p>
+        <h3 class="movie__title">${i + 1}. ${data[i].title}</h3>
+        <p class="movie__director">Directed by ${data[i].director}</p>
         </header>
-        <section class="movie__video" style="background-image: url(${data[i].image})">
+        <section class="movie__video" id="movie${[
+          i,
+        ]}"style="background-image: url(${data[i].image})">
 
           <i class="fas fa-play play"></i>
 
